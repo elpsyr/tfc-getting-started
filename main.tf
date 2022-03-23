@@ -38,7 +38,7 @@ resource "fakewebservices_database" "prod_db" {
 }
 
 
-resource "fakewebservices_server" "servers" {
+resource "demo_server" "servers" {
   name = "Server Test"
   type = "t2.micro"
   vpc  = fakewebservices_vpc.primary_vpc.name
