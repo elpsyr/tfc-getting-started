@@ -20,9 +20,7 @@ resource "fakewebservices_vpc" "primary_vpc" {
 }
 
 resource "fakewebservices_server" "servers" {
-  count = 5
-
-  name = "Server ${count.index + 1}"
+  name = "Server 测试服务器"
   type = "t2.micro"
   vpc  = fakewebservices_vpc.primary_vpc.name
 }
@@ -35,11 +33,4 @@ resource "fakewebservices_load_balancer" "primary_lb" {
 resource "fakewebservices_database" "prod_db" {
   name = "Production DB"
   size = 512
-}
-
-
-resource "demo_server" "servers" {
-  name = "Server Test"
-  type = "t2.micro"
-  vpc  = fakewebservices_vpc.primary_vpc.name
 }
